@@ -121,6 +121,36 @@ input, select, textarea { font-family: var(--font); }
 }
 .nav-link:hover { background: rgba(255,255,255,.08); color: var(--clr-white); }
 
+/* ---------- Language Toggle ---------- */
+.lang-toggle {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  margin-left: 0.75rem;
+}
+
+.lang-btn {
+  padding: 5px 10px;
+  border: 1px solid rgba(139, 0, 0, 0.4);
+  background: transparent;
+  color: #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  line-height: 1.4;
+}
+.lang-btn:hover {
+  background: rgba(139, 0, 0, 0.15);
+  color: var(--clr-white);
+}
+.lang-btn.active {
+  background: var(--clr-red);
+  color: #fff;
+  border-color: var(--clr-red);
+}
+
 /* ---------- Buttons ---------- */
 .btn {
   display: inline-flex;

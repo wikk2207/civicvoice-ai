@@ -21,10 +21,15 @@
         <span>CivicVoice <strong>AI</strong></span>
       </a>
       <nav class="header-nav">
-        <a href="/" class="nav-link">Home</a>
-        <a href="/analytics" class="nav-link">Analytics</a>
-        <a href="/submit" class="nav-link">Submit</a>
+        <a href="/" class="nav-link" data-i18n="nav.home">Home</a>
+        <a href="/analytics" class="nav-link" data-i18n="nav.analytics">Analytics</a>
+        <a href="/submit" class="nav-link" data-i18n="nav.submit">Submit</a>
       </nav>
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="hi">हिन्दी</button>
+        <button class="lang-btn" data-lang="mr">मराठी</button>
+      </div>
     </div>
   </header>
 
@@ -32,12 +37,12 @@
     <div class="admin-container">
       <div class="admin-page-header">
         <div>
-          <h1 class="admin-title">Admin Dashboard</h1>
-          <p class="admin-sub">Manage and respond to civic complaints.</p>
+          <h1 class="admin-title" data-i18n="admin.title">Admin Dashboard</h1>
+          <p class="admin-sub" data-i18n="admin.sub">Manage and respond to civic complaints.</p>
         </div>
         <button id="refreshBtn" class="btn btn-dark">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
-          Refresh
+          <span data-i18n="admin.refreshBtn">Refresh</span>
         </button>
       </div>
 
@@ -46,9 +51,9 @@
 
       <!-- Filters -->
       <div class="admin-filters">
-        <input type="text" id="searchInput" class="admin-input" placeholder="Search by ID, title, category…" />
+        <input type="text" id="searchInput" class="admin-input" placeholder="Search by ID, title, category…" data-i18n-placeholder="admin.searchPh" />
         <select id="filterStatus" class="admin-select">
-          <option value="">All Statuses</option>
+          <option value="" data-i18n="admin.allStatuses">All Statuses</option>
           <option value="submitted">Submitted</option>
           <option value="under_review">Under Review</option>
           <option value="assigned">Assigned</option>
@@ -59,7 +64,7 @@
           <option value="rejected">Rejected</option>
         </select>
         <select id="filterCategory" class="admin-select">
-          <option value="">All Categories</option>
+          <option value="" data-i18n="admin.allCategories">All Categories</option>
           <option value="water">Water Supply</option>
           <option value="garbage">Garbage</option>
           <option value="road">Road Damage</option>
@@ -69,7 +74,7 @@
           <option value="washroom">Public Washroom</option>
         </select>
         <select id="filterPriority" class="admin-select">
-          <option value="">All Priorities</option>
+          <option value="" data-i18n="admin.allPriorities">All Priorities</option>
           <option value="critical">Critical</option>
           <option value="high">High</option>
           <option value="medium">Medium</option>
@@ -82,19 +87,19 @@
         <table class="admin-table" id="complaintsTable">
           <thead>
             <tr>
-              <th>ID</th>
-              <th>Title / Description</th>
-              <th>Category</th>
-              <th>Department</th>
-              <th>Priority</th>
-              <th>Status</th>
-              <th>Date</th>
-              <th>Image</th>
-              <th>Actions</th>
+              <th data-i18n="admin.colId">ID</th>
+              <th data-i18n="admin.colTitle">Title / Description</th>
+              <th data-i18n="admin.colCategory">Category</th>
+              <th data-i18n="admin.colDept">Department</th>
+              <th data-i18n="admin.colPriority">Priority</th>
+              <th data-i18n="admin.colStatus">Status</th>
+              <th data-i18n="admin.colDate">Date</th>
+              <th data-i18n="admin.colImage">Image</th>
+              <th data-i18n="admin.colActions">Actions</th>
             </tr>
           </thead>
           <tbody id="tableBody">
-            <tr><td colspan="9" class="table-empty">Loading complaints…</td></tr>
+            <tr><td colspan="9" class="table-empty" data-i18n="admin.loading">Loading complaints…</td></tr>
           </tbody>
         </table>
       </div>
@@ -102,6 +107,7 @@
   </main>
 
   <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+  <script src="/js/i18n.js"></script>
   <script src="/js/admin.js"></script>
 </body>
 </html>
