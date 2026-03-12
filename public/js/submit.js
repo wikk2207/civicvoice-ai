@@ -85,6 +85,11 @@
     }
   });
 
+  // Expose hook for i18n.js to update voice recognition language
+  window.setVoiceLang = function (langCode) {
+    if (voiceRecorder) voiceRecorder.setLanguage(langCode);
+  };
+
   // --- Geolocation ---
   geoBtn.addEventListener('click', () => {
     if (!navigator.geolocation) {
