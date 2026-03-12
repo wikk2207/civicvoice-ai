@@ -66,7 +66,7 @@
         voiceBtn.classList.remove('recording');
         voiceBtnLabel.textContent = 'Voice Input';
         voiceStatus.hidden = true;
-        showToast('Voice input error: ' + err, 'error');
+        showToast(err, 'error');
       },
     });
   }

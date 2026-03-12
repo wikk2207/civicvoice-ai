@@ -1,6 +1,15 @@
 (function () {
   'use strict';
 
+  const VOICE_ERROR_MESSAGES = {
+    'network':               'Voice input requires an internet connection. Please check your network and try again.',
+    'not-allowed':           'Microphone access was denied. Please allow microphone permission in your browser settings.',
+    'audio-capture':         'No microphone was found. Please ensure a microphone is connected.',
+    'aborted':               'Voice input was cancelled.',
+    'language-not-supported':'The selected language is not supported for voice input.',
+    'service-not-allowed':   'Speech recognition service is not allowed. Please use Chrome or Edge browser.',
+  };
+
   /**
    * VoiceRecorder — wraps the Web Speech API for live transcription.
    */
@@ -39,8 +48,16 @@
       };
 
       this.recognition.onerror = (event) => {
+        if (event.error === 'no-speech') {
+          // Not a real error — restart silently if still recording
+          if (this.isRecording) {
+            try { this.recognition.start(); } catch (_) {}
+          }
+          return;
+        }
         this.isRecording = false;
-        this.onError(event.error);
+        const friendlyMessage = VOICE_ERROR_MESSAGES[event.error] || 'Voice input error: ' + event.error;
+        this.onError(friendlyMessage);
       };
 
       this.recognition.onend = () => {
