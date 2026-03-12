@@ -38,7 +38,7 @@ app.use(helmet({
       styleSrc: ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
       fontSrc: ["'self'", 'https://fonts.gstatic.com'],
       imgSrc: ["'self'", 'data:', 'https://images.unsplash.com', 'blob:'],
-      connectSrc: ["'self'", 'https://nominatim.openstreetmap.org', 'https://translation.googleapis.com'],
+      connectSrc: ["'self'", 'https://nominatim.openstreetmap.org', 'https://translation.googleapis.com', 'wss://www.google.com', 'https://www.google.com'],
     },
   },
 }));
