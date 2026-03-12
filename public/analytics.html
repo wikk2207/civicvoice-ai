@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analytics — CivicVoice AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body class="admin-theme">
+  <!-- Header -->
+  <header class="site-header admin-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+        <span>CivicVoice <strong>AI</strong></span>
+      </a>
+      <nav class="header-nav">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/admin" class="nav-link">Admin</a>
+        <a href="/submit" class="nav-link">Submit</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="admin-main">
+    <div class="admin-container">
+      <div class="admin-page-header">
+        <div>
+          <h1 class="admin-title">Analytics Dashboard</h1>
+          <p class="admin-sub">Insights and trends for civic complaints.</p>
+        </div>
+        <button id="refreshBtn" class="btn btn-dark">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+          Refresh
+        </button>
+      </div>
+
+      <!-- Summary Stats -->
+      <div id="analyticsStats" class="admin-stats-grid"></div>
+
+      <!-- Charts Grid -->
+      <div class="charts-grid">
+        <!-- Category Bar Chart -->
+        <div class="chart-card">
+          <h3 class="chart-title">Complaints by Category</h3>
+          <div id="categoryChart" class="bar-chart-container"></div>
+        </div>
+
+        <!-- Priority Pie Chart -->
+        <div class="chart-card">
+          <h3 class="chart-title">Complaints by Priority</h3>
+          <div class="pie-chart-wrapper">
+            <div id="priorityChart" class="pie-chart"></div>
+            <div id="priorityLegend" class="pie-legend"></div>
+          </div>
+        </div>
+
+        <!-- Department Horizontal Bar -->
+        <div class="chart-card">
+          <h3 class="chart-title">Complaints by Department</h3>
+          <div id="departmentChart" class="bar-chart-container"></div>
+        </div>
+
+        <!-- Monthly Trend -->
+        <div class="chart-card">
+          <h3 class="chart-title">Monthly Trends</h3>
+          <div id="monthlyChart" class="bar-chart-container"></div>
+        </div>
+      </div>
+
+      <!-- Top Locations -->
+      <div class="chart-card">
+        <h3 class="chart-title">Location Hotspots</h3>
+        <div id="locationList" class="location-list"></div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="/js/analytics.js"></script>
+</body>
+</html>
