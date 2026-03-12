@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CivicVoice AI — Smart Civic Complaint Platform</title>
+  <meta name="description" content="Report civic issues directly to the right government department with AI-powered classification." />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <style>
+    .hero-content { padding-top: 5rem; }
+  </style>
+</head>
+<body>
+
+<!-- Toast container -->
+<div class="toast-container" id="toastContainer"></div>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="container">
+    <a href="/" class="nav-brand">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#b30000"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
+      CivicVoice <span>AI</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/submit">Report Issue</a></li>
+      <li><a href="/track">Track Complaint</a></li>
+      <li><a href="/admin">Admin</a></li>
+      <li><a href="/login">Login</a></li>
+      <li><a href="/register" class="btn-nav">Register</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+        Live — AI-Powered Civic Platform
+      </div>
+      <h1>Smart Civic<br /><em>Complaint Platform</em></h1>
+      <p>Report civic issues to the right government department instantly. Our AI classifies your complaint, prioritizes it, and routes it — all in seconds.</p>
+      <div class="hero-btns">
+        <a href="/submit" class="btn btn-primary btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+          Report an Issue
+        </a>
+        <a href="/track" class="btn btn-outline btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          Track Complaint
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <h3 id="statTotal">12,450+</h3>
+        <p>Complaints Resolved</p>
+      </div>
+      <div class="stat-item">
+        <h3>20+</h3>
+        <p>Languages Supported</p>
+      </div>
+      <div class="stat-item">
+        <h3>9</h3>
+        <p>Government Departments</p>
+      </div>
+      <div class="stat-item">
+        <h3 id="statRate">92%</h3>
+        <p>Resolution Rate</p>
+      </div>
+      <div class="stat-item">
+        <h3>48h</h3>
+        <p>Avg Response Time</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="section" style="background: var(--accent);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Platform Features</span>
+      <h2>Everything You Need to Be Heard</h2>
+      <p>Built for citizens, powered by AI — your civic voice, amplified.</p>
+    </div>
+    <div class="features-grid">
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 2 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        </div>
+        <h3>AI Classification</h3>
+        <p>Automatically categorizes complaints into the correct department using keyword-based AI analysis.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <h3>Multilingual Support</h3>
+        <p>Submit complaints in 20+ languages including Hindi, Spanish, French, Arabic, Chinese and more.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+        </div>
+        <h3>Voice Input</h3>
+        <p>Speak your complaint naturally — voice is transcribed and you can listen back before confirming.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>Real-time Tracking</h3>
+        <p>Track the status of your complaint in real time with a detailed timeline of every update.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        </div>
+        <h3>Image Evidence</h3>
+        <p>Attach up to 5 images as evidence. Drag-and-drop upload with live preview and easy removal.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Department Routing</h3>
+        <p>Complaints are automatically routed to the right department — Public Works, Police, Health, and more.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- How it Works -->
+<section class="section" style="background: var(--white);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">How It Works</span>
+      <h2>Three Simple Steps</h2>
+      <p>Getting your complaint heard has never been easier.</p>
+    </div>
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:2rem; text-align:center;">
+      <div>
+        <div style="width:64px;height:64px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;font-size:1.4rem;font-weight:800;">1</div>
+        <h3 style="font-weight:700;margin-bottom:0.5rem;">Describe the Issue</h3>
+        <p style="color:var(--text-muted);font-size:0.88rem;">Type or speak your complaint. Add your location and photos as evidence.</p>
+      </div>
+      <div>
+        <div style="width:64px;height:64px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;font-size:1.4rem;font-weight:800;">2</div>
+        <h3 style="font-weight:700;margin-bottom:0.5rem;">AI Routes It</h3>
+        <p style="color:var(--text-muted);font-size:0.88rem;">Our AI classifies the complaint, assigns priority, and routes it to the correct department.</p>
+      </div>
+      <div>
+        <div style="width:64px;height:64px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;font-size:1.4rem;font-weight:800;">3</div>
+        <h3 style="font-weight:700;margin-bottom:0.5rem;">Track Progress</h3>
+        <p style="color:var(--text-muted);font-size:0.88rem;">Use your unique tracking ID to follow your complaint from submission to resolution.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background: linear-gradient(135deg, var(--secondary) 0%, #2a0000 100%); padding:4rem 0; text-align:center;">
+  <div class="container">
+    <h2 style="color:#fff;font-size:2rem;font-weight:800;margin-bottom:0.8rem;">Ready to Make a Difference?</h2>
+    <p style="color:rgba(255,255,255,0.7);margin-bottom:2rem;font-size:1.05rem;">Join thousands of citizens already using CivicVoice AI.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="/register" class="btn btn-primary btn-lg">Get Started Free</a>
+      <a href="/track" class="btn btn-outline btn-lg">Track a Complaint</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>CivicVoice AI</h3>
+        <p>Empowering citizens to report civic issues with AI-driven classification, multilingual support, and real-time tracking.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <a href="/submit">Report Issue</a>
+        <a href="/track">Track Complaint</a>
+        <a href="/admin">Admin Dashboard</a>
+        <a href="/analytics">Analytics</a>
+      </div>
+      <div class="footer-col">
+        <h4>Account</h4>
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+      </div>
+      <div class="footer-col">
+        <h4>Departments</h4>
+        <a href="#">Public Works</a>
+        <a href="#">Sanitation</a>
+        <a href="#">Water Supply</a>
+        <a href="#">Electricity</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 CivicVoice AI. All rights reserved.</span>
+      <span>Built with Node.js &amp; Firebase</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Animate stat counter on scroll
+  function animateCounters() {
+    document.querySelectorAll('.stat-item h3').forEach(el => {
+      const text = el.textContent.replace(/[^0-9]/g, '');
+      const suffix = el.textContent.replace(/[0-9]/g, '').trim();
+      if (!text) return;
+      const target = parseInt(text, 10);
+      let current = 0;
+      const step = Math.ceil(target / 50);
+      const timer = setInterval(() => {
+        current = Math.min(current + step, target);
+        el.textContent = current.toLocaleString() + suffix;
+        if (current >= target) clearInterval(timer);
+      }, 30);
+    });
+  }
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { animateCounters(); observer.disconnect(); } });
+  }, { threshold: 0.4 });
+  const statsBar = document.querySelector('.stats-bar');
+  if (statsBar) observer.observe(statsBar);
+</script>
+</body>
+</html>
