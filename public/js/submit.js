@@ -202,27 +202,26 @@ function setupImageUpload() {
     allowed.forEach(file => {
       if (uploadedFiles.length >= 5) { showToast('Maximum 5 images allowed.', 'warning'); return; }
       if (file.size > 5 * 1024 * 1024) { showToast(`${file.name} exceeds 5 MB limit.`, 'warning'); return; }
-      if (uploadedFiles.some(f => f.name === file.name && f.size === file.size)) return;
-      uploadedFiles.push(file);
-      addPreview(file, uploadedFiles.length - 1);
+      if (uploadedFiles.some(f => f.file.name === file.name && f.file.size === file.size)) return;
+      const id = `file-${Date.now()}-${Math.random().toString(36).slice(2)}`;
+      uploadedFiles.push({ id, file });
+      addPreview(file, id);
     });
   }
 
-  function addPreview(file, idx) {
+  function addPreview(file, id) {
     const reader = new FileReader();
     reader.onload = (e) => {
       const div = document.createElement('div');
       div.className = 'preview-item';
-      div.dataset.idx = idx;
+      div.dataset.fileId = id;
       div.innerHTML = `
         <img src="${e.target.result}" alt="${file.name}" />
         <button class="preview-remove" title="Remove">&times;</button>
       `;
       div.querySelector('.preview-remove').addEventListener('click', () => {
-        uploadedFiles.splice(idx, 1);
+        uploadedFiles = uploadedFiles.filter(f => f.id !== id);
         div.remove();
-        // Re-index
-        previewGrid.querySelectorAll('.preview-item').forEach((el, i) => el.dataset.idx = i);
       });
       previewGrid.appendChild(div);
     };
@@ -234,7 +233,7 @@ function setupImageUpload() {
 async function uploadImages() {
   if (!uploadedFiles.length) return [];
   const formData = new FormData();
-  uploadedFiles.forEach(f => formData.append('files', f));
+  uploadedFiles.forEach(f => formData.append('files', f.file));
   try {
     const res = await fetch('/api/upload', { method: 'POST', body: formData });
     const data = await res.json();

@@ -7,7 +7,7 @@ const { v4: uuidv4 } = require('uuid');
 const { db, memoryStore } = require('../config/firebase');
 
 function hashPassword(password) {
-  return crypto.createHash('sha256').update(password + process.env.AUTH_SECRET || 'civicvoice-secret').digest('hex');
+  return crypto.createHash('sha256').update(password + (process.env.AUTH_SECRET || 'civicvoice-secret')).digest('hex');
 }
 
 function generateToken(userId) {

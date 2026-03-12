@@ -105,10 +105,6 @@ router.put('/complaints/:trackingId', async (req, res, next) => {
     }
     filtered.updatedAt = new Date().toISOString();
 
-    if (updates.status) {
-      filtered['timeline'] = null; // handled below
-    }
-
     if (db) {
       const snapshot = await db.collection('complaints')
         .where('trackingId', '==', trackingId.toUpperCase())
@@ -120,7 +116,6 @@ router.put('/complaints/:trackingId', async (req, res, next) => {
       const doc = snapshot.docs[0];
       const existing = doc.data();
       const updateData = { ...filtered };
-      delete updateData.timeline;
       if (updates.status) {
         updateData.timeline = [
           ...(existing.timeline || []),

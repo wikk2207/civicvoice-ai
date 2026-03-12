@@ -44,7 +44,9 @@ function setupCanvas(id) {
   const canvas = document.getElementById(id);
   if (!canvas) return null;
   canvas.width  = canvas.offsetWidth  || canvas.parentElement.clientWidth  || 400;
-  canvas.height = canvas.height || 260;
+  // Preserve explicit height attribute; fall back to offsetHeight or default
+  const attrH = parseInt(canvas.getAttribute('height'), 10);
+  if (!attrH) canvas.height = canvas.offsetHeight || 260;
   return canvas;
 }
 

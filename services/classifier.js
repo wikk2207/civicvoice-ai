@@ -104,18 +104,8 @@ function classifyComplaint(text) {
     ? 'General Administration'
     : CATEGORIES[bestCategory].department;
 
-  // Determine priority
+  // Determine priority in descending severity order
   let priority = 'medium';
-  for (const [level, keywords] of Object.entries(PRIORITY_KEYWORDS)) {
-    for (const keyword of keywords) {
-      if (lower.includes(keyword)) {
-        priority = level;
-        break;
-      }
-    }
-    if (priority !== 'medium' || level === 'medium') break;
-  }
-  // Re-check in priority order
   for (const level of ['critical', 'high', 'medium', 'low']) {
     let matched = false;
     for (const keyword of PRIORITY_KEYWORDS[level]) {
